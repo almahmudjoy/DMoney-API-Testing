@@ -127,7 +127,7 @@ DMoney_API_Test_Cases.xlsx
 
 ### Newman Report Screenshot
 
-![Newman Report](Screenshot/newman-report.png)
+![Newman Report](Screenshot/newman_report.png)
 
 ---
 
