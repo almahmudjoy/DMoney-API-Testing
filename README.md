@@ -111,9 +111,12 @@ Assignment-2
 
 All test cases contain proper assertions.
 
-### Test Case File
+## 📑 Test Cases
 
-DMoney_API_Test_Cases.xlsx
+The complete test cases are available here:
+
+- Excel File: `Dmoney_API_Test_Cases.xlsx`
+- Google Sheets: https://docs.google.com/spreadsheets/d/1AnLLKh9ILtRol8m1Rp6B6rN4Lxss5i7v-DGK0wGdlK0/edit?gid=0#gid=0
 
 ---
 
