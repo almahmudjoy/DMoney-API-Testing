@@ -191,15 +191,15 @@ Reports/
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Abdullah Al Mahmud Joy**
 
-Full Stack SDET - ROAD to SDET
-M.Sc. in Computer Science & Engineering
-Military Institute of Science and Technology (MIST)
-B.Sc. in Computer Science & Engineering
-Bangladesh University of Business and Technology (BUBT)
+- Full Stack SDET - ROAD to SDET
+- M.Sc. in Computer Science & Engineering  
+  Military Institute of Science and Technology (MIST)
+- B.Sc. in Computer Science & Engineering  
+  Bangladesh University of Business and Technology (BUBT)
 
 ---
 
