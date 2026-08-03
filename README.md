@@ -1,5 +1,7 @@
 # 💰 DMoney API Testing Assignment
 
+A comprehensive API test suite for a DMoney-style mobile financial service (MFS) transaction system, built with **Postman** and automated via **Newman**.
+
 <p align="center">
 
 ![Postman](https://img.shields.io/badge/Postman-API%20Testing-orange?logo=postman)
@@ -12,176 +14,157 @@
 
 ---
 
-# 📑 Table of Contents
+## 📌 Project Overview
 
-- Project Overview
-- Testing Workflow
-- Project Structure
-- Technologies Used
-- Test Cases
-- Newman Report
-- API Documentation
-- How to Run
-- Git Ignore
-- Author
+This repository contains the API testing assignment for a DMoney-style transaction system. It demonstrates end-to-end API test automation for a real-world mobile financial service, covering user onboarding, account activation, and core money-movement operations such as deposits, transfers, cash-outs, and merchant payments.
+
+The project showcases:
+
+- Design and execution of a full **Postman collection** covering positive and negative scenarios
+- **Newman-based** command-line test automation with HTML reporting
+- Validation of **business rules** such as commissions, service fees, and transaction status
+- Structured **test case documentation** and reporting suitable for a QA portfolio
 
 ---
 
-# 📌 Project Overview
+## 🔄 Assignment Workflow
 
-This repository contains the API Testing assignment for the DMoney Transaction System.
+The collection validates the complete transaction lifecycle of the DMoney system:
 
-The project was completed using **Postman**, **Newman**, and **GitHub**.
+1. **Create 2 Customers**
+2. **Create 1 Agent**
+3. **Create 1 Merchant**
+4. **Activate all users** via the Admin API (Customers, Agent, Merchant)
+5. **System deposits 5,000 TK** to the Agent account
+6. **Agent deposits 2,000 TK** to Customer 1
+7. **Verify deposit commission** credited to the Agent
+8. **Customer 1 sends 1,000 TK** to Customer 2
+9. **Verify send-money service fee** deduction
+10. **Customer 2 cashes out 500 TK** from the Agent
+11. **Verify cash-out service fee** deduction
+12. **Customer 2 pays the Merchant 400 TK**
 
-The assignment includes:
-
-- API Collection
-- Positive Test Cases
-- Negative Test Cases
-- Assertions
-- Newman HTML Report
-- Test Case Document
-- README Documentation
-
----
-
-# 🔄 Testing Workflow
-
-The following business flow was tested successfully:
-
-1. Admin Login
-2. System Login
-3. Create Customer 1
-4. Create Customer 2
-5. Create Agent
-6. Create Merchant
-7. Activate Customer 1
-8. Activate Customer 2
-9. Activate Agent
-10. Activate Merchant
-11. Agent Login + OTP Verification
-12. Customer 1 Login + OTP Verification
-13. Customer 2 Login + OTP Verification
-14. System Deposit → Agent (5000 BDT)
-15. Agent Deposit → Customer (2000 BDT)
-16. Customer 1 Send Money → Customer 2 (1000 BDT)
-17. Customer 2 Cash Out → Agent (500 BDT)
-18. Customer 2 Payment → Merchant (400 BDT)
+Each step also includes user authentication (login/OTP verification where applicable) before the corresponding transaction request is executed.
 
 ---
 
-# 📁 Project Structure
+## 🛠 Technologies Used
+
+- **Postman** — API design, request collections, and test scripting
+- **Newman** — CLI-based collection runner for automated execution
+- **JavaScript** — Pre-request scripts and test assertions within Postman
+- **Node.js** — Runtime environment for Newman and reporting tools
+
+---
+
+## 📁 Project Structure
 
 ```text
-Assignment-2
-│
-├── DMoney API Testing.postman_collection.json
-├── Batch19.postman_environment.json
-├── DMoney_API_Test_Cases.xlsx
+Assignment-2/
+├── Reports/
+│   └── newman-report.html
+├── Screenshot/
+│   └── newman_report.png
 ├── README.md
 ├── .gitignore
-│
-├── Reports
-│   └── newman-report.html
-│
-└── Screenshot
-    └── newman-report.png
+├── DMoney API Testing.postman_collection.json
+├── Batch19.postman_environment.json
+└── Dmoney_API_Test_Cases.xlsx
 ```
 
 ---
 
-# 🛠 Technologies Used
-
-- Postman
-- Newman
-- HTML Extra Reporter
-- Node.js
-- Git
-- GitHub
-
----
-
-# ✅ Test Cases
+## ✅ Test Coverage
 
 | Type | Count |
 |------|------:|
 | Positive Test Cases | 18 |
 | Negative Test Cases | 12 |
-| Total | **30** |
+| **Total** | **30** |
 
-All test cases contain proper assertions.
+The suite covers:
 
-## 📑 Test Cases
-
-The complete test cases are available here:
-
-- Excel File: `Dmoney_API_Test_Cases.xlsx`
-- Google Sheets: https://docs.google.com/spreadsheets/d/1AnLLKh9ILtRol8m1Rp6B6rN4Lxss5i7v-DGK0wGdlK0/edit?gid=0#gid=0
+- ✅ Positive Test Cases — valid flows across all user roles
+- ✅ Negative Test Cases — invalid inputs, unauthorized actions, and edge cases
+- ✅ Assertions — verifying expected responses at every step
+- ✅ Business Rule Validation — commissions, service fees, and account states
+- ✅ API Response Validation — status codes, payloads, and error messages
 
 ---
 
-## Newman Report
+## 🔍 Assertions Implemented
 
-| Item | Result |
-|------|-------:|
+Key validations embedded in the test scripts include:
+
+- **Status Code** — correct HTTP response codes for each request
+- **Response Message** — accurate success/error messages
+- **Balance Validation** — correct debit/credit amounts across accounts
+- **Commission Validation** — Agent commission calculated correctly on deposits
+- **Service Fee Validation** — fees correctly applied on send-money and cash-out
+- **Transaction Status** — transactions marked complete/successful as expected
+- **User Activation** — Admin activation reflected correctly for each user role
+
+---
+
+## 🚀 Running the Collection
+
+**1. Install dependencies**
+
+```bash
+npm install -g newman
+npm install -g newman-reporter-htmlextra
+```
+
+**2. Run the collection**
+
+```bash
+newman run "DMoney API Testing.postman_collection.json" -e Batch19.postman_environment.json
+```
+
+**3. Run with HTML Extra report**
+
+```bash
+newman run "DMoney API Testing.postman_collection.json" -e Batch19.postman_environment.json -r htmlextra --reporter-htmlextra-export Reports/newman-report.html
+```
+
+---
+
+## 📑 Test Case Document
+
+> Detailed test cases (positive and negative) are documented in:
+> **`Dmoney_API_Test_Cases.xlsx`**
+>
+> 🔗 [View on Google Sheets](https://docs.google.com/spreadsheets/d/1AnLLKh9ILtRol8m1Rp6B6rN4Lxss5i7v-DGK0wGdlK0/edit?gid=0#gid=0)
+
+---
+
+## 📊 Newman Report
+
+| Metric | Result |
+|--------|-------:|
 | Requests | 21 |
 | Assertions | 76 |
 | Failed | 0 |
 
-### Newman Report Screenshot
+The full HTML report is generated inside the **`Reports/`** folder after each run.
+
+**Report Preview:**
 
 ![Newman Report](Screenshot/newman_report.png)
 
 ---
 
-## API Documentation
+## 📖 API Documentation
 
 Published Postman Documentation:
 
-https://documenter.getpostman.com/view/53084089/2sBY4TqJJs
-
-> The exported Postman Collection is included in this repository.
+🔗 [documenter.getpostman.com/view/53084089/2sBY4TqJJs](https://documenter.getpostman.com/view/53084089/2sBY4TqJJs)
 
 ---
 
-# 🚀 How to Run
+## 🚫 Git Ignore
 
-## Install Newman
-
-```bash
-npm install -g newman
-```
-
-## Install HTML Extra Reporter
-
-```bash
-npm install -g newman-reporter-htmlextra
-```
-
-## Execute Collection
-
-```bash
-newman run Batch19_API_Testing.postman_collection.json ^
--e Batch19.postman_environment.json ^
---folder "01 - Assignment Flow" ^
--r cli,htmlextra ^
---reporter-htmlextra-export Reports/newman-report.html
-```
-
----
-
-# 📂 Repository Files
-
-- Postman Collection
-- Postman Environment
-- Test Case Excel
-- Newman Report
-- README
-- Screenshots
-
----
-
-# 🚫 .gitignore
+The following are excluded from version control:
 
 ```text
 node_modules/
@@ -195,20 +178,8 @@ Reports/
 
 **Abdullah Al Mahmud Joy**
 
-- Full Stack SDET - ROAD to SDET
-- M.Sc. in Computer Science & Engineering  
-  Military Institute of Science and Technology (MIST)
-- B.Sc. in Computer Science & Engineering  
-  Bangladesh University of Business and Technology (BUBT)
-
----
-
-# ⭐ Assignment Status
-
-- ✅ Postman Collection Completed
-- ✅ Positive Test Cases
-- ✅ Negative Test Cases
-- ✅ Assertions Added
-- ✅ Newman Execution Passed
-- ✅ README Prepared
-- ✅ Ready for GitHub Submission
+- Full Stack SDET — Road to SDET
+- M.Sc. in Computer Science & Engineering, Military Institute of Science and Technology (MIST)
+- B.Sc. in Computer Science & Engineering, Bangladesh University of Business and Technology (BUBT)
+- **GitHub:** [github.com/almahmudjoy](https://github.com/almahmudjoy)
+- **LinkedIn:** [linkedin.com/in/abdullah-al-mahmud-joy](https://www.linkedin.com/in/abdullah-al-mahmud-joy/)
