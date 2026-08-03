@@ -1,4 +1,4 @@
-# 💰 DMoney API Testing Assignment
+# 💰 DMoney API Testing
 
 A comprehensive API test suite for a DMoney-style mobile financial service (MFS) transaction system, built with **Postman** and automated via **Newman**.
 
