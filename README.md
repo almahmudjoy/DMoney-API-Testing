@@ -1,3 +1,5 @@
+- **Newman** — CLI-based collection runner with HTML reporting
+- **k6** — concurrent transaction performance testing with per-API thresholds
 # 💰 DMoney API Testing
 
 A comprehensive API test suite for a DMoney-style mobile financial service (MFS) transaction system, built with **Postman** and automated via **Newman**.
@@ -151,6 +153,24 @@ The full HTML report is generated inside the **`Reports/`** folder after each ru
 **Report Preview:**
 
 ![Newman Report](Screenshot/newman_report.png)
+
+---
+
+## 📈 Performance Testing Assignment
+
+The two-minute k6 workload for deposit, send-money, and payment APIs is maintained as a separate submission in **`Assignment-3/`**. It includes the runnable test, environment example, HTML report, k6 summary, and metrics screenshot. Credentials remain local and are not included.
+
+| API | Requests | Average | p(95) | Throughput | Failed |
+|------|---------:|--------:|------:|-----------:|-------:|
+| Deposit | 6 | 44.11 ms | 71.12 ms | 0.07 req/s | 0% |
+| Send Money | 6 | 63.24 ms | 94.10 ms | 0.07 req/s | 0% |
+| Payment | 14 | 76.33 ms | 119.45 ms | 0.07 req/s | 0% |
+
+All transaction checks passed and no configured threshold was breached. Payment p(95) increased from 57.53 ms in the first phase to 120.72 ms in the final phase; the phase sample counts are small, so this is an observed change rather than a conclusive degradation trend.
+
+**Detailed metrics:** [Assignment-3 README](Assignment-3/README.md) · [HTML report](Assignment-3/Reports/report.html)
+
+![k6 transaction metrics](Assignment-3/Screenshot/k6-metrics.png)
 
 ---
 

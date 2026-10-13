@@ -1,0 +1,67 @@
+     ✓ payment status is 201
+     ✓ payment transaction succeeded
+     ✓ payment returns transaction ID
+     ✓ payment returns expected success message
+     ✓ sendMoney status is 201
+     ✓ sendMoney transaction succeeded
+     ✓ sendMoney returns transaction ID
+     ✓ sendMoney returns expected success message
+     ✓ deposit status is 201
+     ✓ deposit transaction succeeded
+     ✓ deposit returns transaction ID
+     ✓ deposit returns expected success message
+
+     checks.............................: 100.00% ✓ 104      ✗ 0  
+     data_received......................: 15 kB   122 B/s
+     data_sent..........................: 14 kB   116 B/s
+     http_req_blocked...................: avg=968.91µs min=0s      med=554.9µs  max=5.76ms   p(90)=2.71ms   p(95)=3.52ms  
+     http_req_connecting................: avg=705.29µs min=0s      med=548.29µs max=3.34ms   p(90)=2.27ms   p(95)=2.54ms  
+   ✓ http_req_duration..................: avg=48.68ms  min=8.53ms  med=47.29ms  max=122.2ms  p(90)=94.53ms  p(95)=117.51ms
+     ✓ { api:deposit,phase:30-60s }.....: avg=50.88ms  min=25.92ms med=50.88ms  max=75.85ms  p(90)=70.85ms  p(95)=73.35ms 
+     ✓ { api:deposit,phase:60-90s }.....: avg=40.72ms  min=25.23ms med=40.36ms  max=56.95ms  p(90)=53.14ms  p(95)=55.05ms 
+     ✓ { api:deposit }..................: avg=44.11ms  min=25.23ms med=40.36ms  max=75.85ms  p(90)=66.4ms   p(95)=71.12ms 
+     ✓ { api:payment,phase:00-30s }.....: avg=51.89ms  min=45.63ms med=51.89ms  max=58.15ms  p(90)=56.9ms   p(95)=57.53ms 
+     ✓ { api:payment,phase:30-60s }.....: avg=64.27ms  min=39.14ms med=64.27ms  max=89.4ms   p(90)=84.38ms  p(95)=86.89ms 
+     ✓ { api:payment,phase:60-90s }.....: avg=65.25ms  min=48.95ms med=65.25ms  max=81.55ms  p(90)=78.29ms  p(95)=79.92ms 
+     ✓ { api:payment,phase:90-120s }....: avg=88.22ms  min=51.11ms med=84.39ms  max=122.2ms  p(90)=119.24ms p(95)=120.72ms
+     ✓ { api:payment }..................: avg=76.33ms  min=39.14ms med=73.74ms  max=122.2ms  p(90)=117.81ms p(95)=119.45ms
+     ✓ { api:sendMoney,phase:00-30s }...: avg=56.88ms  min=54.83ms med=56.88ms  max=58.94ms  p(90)=58.53ms  p(95)=58.73ms 
+     ✓ { api:sendMoney,phase:30-60s }...: avg=70.64ms  min=39.3ms  med=70.64ms  max=101.98ms p(90)=95.71ms  p(95)=98.85ms 
+     ✓ { api:sendMoney,phase:60-90s }...: avg=62.19ms  min=53.91ms med=62.19ms  max=70.46ms  p(90)=68.8ms   p(95)=69.63ms 
+     ✓ { api:sendMoney }................: avg=63.24ms  min=39.3ms  med=56.88ms  max=101.98ms p(90)=86.22ms  p(95)=94.1ms  
+       { expected_response:true }.......: avg=48.68ms  min=8.53ms  med=47.29ms  max=122.2ms  p(90)=94.53ms  p(95)=117.51ms
+   ✓ http_req_failed....................: 0.00%   ✓ 0        ✗ 38 
+     ✓ { api:deposit,phase:30-60s }.....: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:deposit,phase:60-90s }.....: 0.00%   ✓ 0        ✗ 4  
+     ✓ { api:deposit }..................: 0.00%   ✓ 0        ✗ 6  
+     ✓ { api:payment,phase:00-30s }.....: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:payment,phase:30-60s }.....: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:payment,phase:60-90s }.....: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:payment,phase:90-120s }....: 0.00%   ✓ 0        ✗ 8  
+     ✓ { api:payment }..................: 0.00%   ✓ 0        ✗ 14 
+     ✓ { api:sendMoney,phase:00-30s }...: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:sendMoney,phase:30-60s }...: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:sendMoney,phase:60-90s }...: 0.00%   ✓ 0        ✗ 2  
+     ✓ { api:sendMoney }................: 0.00%   ✓ 0        ✗ 6  
+     http_req_receiving.................: avg=546.22µs min=0s      med=534.35µs max=1.44ms   p(90)=895.31µs p(95)=923.33µs
+     http_req_sending...................: avg=319.18µs min=0s      med=0s       max=3.51ms   p(90)=829.05µs p(95)=1.27ms  
+     http_req_tls_handshaking...........: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...................: avg=47.81ms  min=8.52ms  med=46.44ms  max=121.69ms p(90)=93.57ms  p(95)=117.44ms
+     http_reqs..........................: 38      0.316252/s
+     iteration_duration.................: avg=15.07s   min=15.04s  med=15.07s   max=15.1s    p(90)=15.09s   p(95)=15.1s   
+     iterations.........................: 13      0.108191/s
+   ✓ transaction_checks.................: 100.00% ✓ 26       ✗ 0  
+     ✓ { api:deposit,phase:30-60s }.....: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:deposit,phase:60-90s }.....: 100.00% ✓ 4        ✗ 0  
+     ✓ { api:deposit }..................: 100.00% ✓ 6        ✗ 0  
+     ✓ { api:payment,phase:00-30s }.....: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:payment,phase:30-60s }.....: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:payment,phase:60-90s }.....: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:payment,phase:90-120s }....: 100.00% ✓ 8        ✗ 0  
+     ✓ { api:payment }..................: 100.00% ✓ 14       ✗ 0  
+     ✓ { api:sendMoney,phase:00-30s }...: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:sendMoney,phase:30-60s }...: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:sendMoney,phase:60-90s }...: 100.00% ✓ 2        ✗ 0  
+     ✓ { api:sendMoney }................: 100.00% ✓ 6        ✗ 0  
+     vus................................: 4       min=2      max=4
+     vus_max............................: 4       min=4      max=4

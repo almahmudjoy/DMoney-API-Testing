@@ -1,3 +1,5 @@
 node_modules/
 Reports/
+!Assignment-3/Reports/
+!Assignment-3/Reports/**
 .env
